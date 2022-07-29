@@ -42,7 +42,7 @@ print("Content-type: text/html \n")
 import magicwand
 import random
  
-sentances_tuple = ("The toy brought back fond memories",
+sentences_tuple = ("The toy brought back fond memories",
                    "You have every right to be angry",
                    "I liked their first two albums", 
                    "He loved eating bananas in hot dog buns")
@@ -50,9 +50,9 @@ sentances_tuple = ("The toy brought back fond memories",
 print("Can you complete the sentences:")
 print()
 
-for sentance in sentances_tuple:
-    jumbled_sentance = ""
-    s_list = sentance.split(" ")
+for sentence in sentences_tuple:
+    jumbled_sentence = ""
+    s_list = sentence.split(" ")
     max_index = len(s_list) - 1 
     rand_index1 = random.randint(0, max_index)
     rand_index2 = random.randint(0, max_index)
@@ -60,10 +60,10 @@ for sentance in sentances_tuple:
     
     for word in s_list:
         if word == s_list[rand_index1] or word == s_list[rand_index2] or word == s_list[rand_index3]:
-            jumbled_sentance = jumbled_sentance + ("_" * len(word)) + " "
+            jumbled_sentence = jumbled_sentence + ("_" * len(word)) + " "
         else: 
-            jumbled_sentance = jumbled_sentance + word + " "
-    print(jumbled_sentance)
+            jumbled_sentence = jumbled_sentence + word + " "
+    print(jumbled_sentence)
     print()
 
 print()
@@ -75,5 +75,5 @@ print()
 print()
 
 print("Correct Answers:")
-for sentance in sentances_tuple:
-    print(sentance)
+for sentence in sentences_tuple:
+    print(sentence)
