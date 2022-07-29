@@ -37,11 +37,41 @@ pre{
 }
 </style>
 
-<div>
-There are a total of:
-4945 first names
-3898 middle names
-21986 last names
+#!/usr/bin/python3
+print("Content-type: text/html \n")
 
-Random name generator
-Amitie Pincus Dorison
+import magicwand, random
+
+
+first_name_file = open("first-names.txt")
+middle_name_file = open("middle-names.txt")
+last_name_file = open("last-names.txt")
+
+first_names = []
+middle_names = middle_name_file.read().split("\n")
+last_names = last_name_file.read().split("\n")
+
+for line in first_name_file:
+    new_line = line.rstrip()
+    first_names.append(new_line)
+
+first_name_file.close()  
+middle_name_file.close()
+last_name_file.close()
+ 
+print("There are a total of:")
+print(len(first_names), "first names")
+print(len(middle_names), "middle names")
+print(len(last_names), "last names")
+print()
+
+max_index = len(first_names) - 1
+random_index = random.randint(0, max_index)
+f_name = first_names[random_index]
+
+random_index2 = random.randint(0, len(middle_names) - 1)
+m_name = middle_names[random_index2]
+random_index3 = random.randint(0, len(last_names) - 1)
+l_name = last_names[random_index3]
+print("Random name generator")
+print(f_name, m_name, l_name)
